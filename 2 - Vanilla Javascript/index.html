@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BSIT Lab - Three Cards Game</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <main class="game-container">
+        <h1>Three Cards Game</h1>
+
+        <!-- Score Board -->
+        <section class="scoreboard">
+        <div class="score-card">
+            <h2>Player 1</h2>
+            <p class="score">Score: <span id="p1-score">0</span></p>
+        </div>
+        <div class="score-card">
+            <h2>Player 2</h2>
+            <p class="score">Score: <span id="p2-score">0</span></p>
+        </div>
+        </section>
+
+        <!-- Game Table -->
+        <section class="table">
+        <!-- Player 1 Hand -->
+        <div class="player-hand">
+            <h3>Player 1 Hand</h3>
+            <div class="cards-wrapper">
+            <div class="card p1-card"></div>
+            <div class="card p1-card"></div>
+            <div class="card p1-card"></div>
+            </div>
+        </div>
+
+        <!-- Player 2 Hand -->
+        <div class="player-hand">
+            <h3>Player 2 Hand</h3>
+            <div class="cards-wrapper">
+            <div class="card p2-card"></div>
+            <div class="card p2-card"></div>
+            <div class="card p2-card"></div>
+            </div>
+        </div>
+        </section>
+
+        <!-- Game Controls & Status -->
+        <section class="controls">
+        <button id="draw-btn">Draw Cards</button>
+        <div id="result-message" class="result">Click "Draw Cards" to start!</div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

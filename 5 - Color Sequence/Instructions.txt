@@ -1,0 +1,14 @@
+Objective:
+	To be able to create your own Component/s
+	To apply knowledge of Reusable Component
+	To utilize Props for Parameter Passing
+
+
+Instructions:
+1. Refer to the video attached.
+2. Create a React Project and create reusable components with props concept.
+3. Answer the questions below
+	- Where is data being passed from parent to child, and how do props make this possible?
+	- If we wanted to change the grid size from 3x3 to 4x4, which parts of your code need to change and why?
+	- Look at your grid. How does creating a single Box component save you from writing repetitive HTML code?
+	- If you remove the color prop from the Box component, what happens to the grid squares on your screen? Why?

@@ -1,0 +1,140 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #1e293b;
+  color: #f8fafc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.game-container {
+  background-color: #0f172a;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  width: 90%;
+  max-width: 700px;
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 1.5rem;
+  color: #38bdf8;
+}
+
+.scoreboard {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 2rem;
+  background-color: #1e293b;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.score-card h2 {
+  font-size: 1.2rem;
+  color: #94a3b8;
+}
+
+.score {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 0.25rem;
+}
+
+.table {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.player-hand {
+  flex: 1;
+}
+
+.player-hand h3 {
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+  color: #cbd5e1;
+}
+
+.cards-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.card {
+  width: 65px;
+  height: 95px;
+  border: 2px solid #334155;
+  border-radius: 6px;
+  background-color: #ffffff;
+  color: #0f172a;
+  font-size: 1.2rem;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.card:not(:empty) {
+  border-color: #38bdf8;
+  animation: popIn 0.25s ease-out;
+}
+
+/* Red text helper for hearts/diamonds if added dynamically or styled */
+.card.red-suit {
+  color: #e11d48;
+}
+
+@keyframes popIn {
+  0% { transform: scale(0.8); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+#draw-btn {
+  background-color: #0284c7;
+  color: #ffffff;
+  border: none;
+  padding: 0.75rem 2rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+#draw-btn:hover:not(:disabled) {
+  background-color: #0369a1;
+}
+
+#draw-btn:disabled {
+  background-color: #475569;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.result {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #f1f5f9;
+  min-height: 1.5em;
+}

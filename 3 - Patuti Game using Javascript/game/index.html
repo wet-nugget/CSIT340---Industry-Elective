@@ -1,0 +1,62 @@
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Patuti Survival</title>
+		<script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+		<link rel="stylesheet" type="text/css" href="styles/style.css">
+	</head>
+	<body>
+		<div id="game">
+			<div class="container">
+				<img id="patuti" src="moves/idle-1.png">
+				<div id="patuti-head-hitbox" class="patuti-hitbox"></div>
+				<div id="patuti-body-hitbox" class="patuti-hitbox"></div>
+				<img id="area" src="moves/area.png">
+			</div>
+			<div>
+				<img id="bullet-h-1" class="position-absolute bullet-h" src="moves/bullet_h.png">
+				<img id="bullet-h-2" class="position-absolute bullet-h" src="moves/bullet_h.png">
+				<img id="bullet-h-3" class="position-absolute bullet-h" src="moves/bullet_h.png">
+			</div>
+			<div>
+				<img id="bullet-v-1" class="position-absolute bullet-v" src="moves/bullet_v.png">
+				<img id="bullet-v-2" class="position-absolute bullet-v" src="moves/bullet_v.png">
+				<img id="bullet-v-3" class="position-absolute bullet-v" src="moves/bullet_v.png">
+			</div>
+			<div id="score-bar" aria-label="Lives">
+				<div class="bar"></div><div class="bar"></div><div class="bar"></div>
+				<div class="bar"></div><div class="bar"></div>
+			</div>
+			<div id="time-hud" aria-label="Survival time">
+				<div>Time <span id="timer">00:00</span></div>
+				<div>Longest <span id="longest-time">00:00</span></div>
+			</div>
+			<button id="pause-button" type="button">Pause</button>
+			<div id="floor"></div>
+			<div id="wall"></div>
+		</div>
+		<div id="start-overlay" class="overlay">
+			<h1 id="title">Patuti Survival</h1>
+			<h4 id="start-button" class="overlay-button">Start Game</h4>
+		</div>
+		<div id="pause-overlay" class="overlay" style="display: none;">
+			<h1 id="pause-title">Paused</h1>
+			<h4 id="resume-button" class="overlay-button">Resume</h4>
+		</div>
+		<div id="game-over" class="overlay" style="display: none;">
+			<h1 id="description">Game Over</h1>
+			<div id="game-over-times">
+				<div>Time <span id="game-over-time">00:00</span></div>
+				<div>Longest <span id="game-over-longest-time">00:00</span></div>
+			</div>
+			<h4 id="restart" class="overlay-button">Tap to Try Again</h4>
+		</div>
+		<script src="scripts/collision-detection.js"></script>
+		<script src="scripts/variables.js"></script>
+		<script src="scripts/functions.js"></script>
+		<script src="scripts/bullet-movement.js"></script>
+		<script src="scripts/patuti-movement.js"></script>
+		<script src="scripts/game-over.js"></script>
+	</body>
+</html>

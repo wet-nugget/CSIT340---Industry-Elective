@@ -1,0 +1,253 @@
+html {
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 100%;
+    overflow: hidden;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+#game {
+    position: relative;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    background: url(../moves/background.png) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.container {
+    position: relative;
+    width: 570px;
+    height: 480px;
+    margin: 32px auto 0;
+}
+
+#patuti {
+    max-width: 150px;
+    max-height: 150px;
+    position: absolute;
+    bottom: 0;
+}
+
+#patuti.hit-flash {
+    animation: patuti-hit-flash 0.35s linear;
+}
+
+@keyframes patuti-hit-flash {
+    0%, 100% {
+        opacity: 1;
+        filter: none;
+    }
+    15%, 35%, 55%, 75% {
+        opacity: 0;
+    }
+    25%, 45%, 65%, 85% {
+        opacity: 1;
+        filter: brightness(2);
+    }
+}
+
+.patuti-hitbox {
+    display: none;
+    position: absolute;
+    pointer-events: none;
+    z-index: 2;
+    border: 2px solid #ff3b30;
+    box-sizing: border-box;
+}
+
+.patuti-hitbox.visible {
+    display: block;
+}
+
+#patuti-head-hitbox {
+    border-color: #00a8ff;
+}
+
+#area {
+    height: 200px;
+    width: 570px;
+    position: absolute;
+    bottom: -192px;
+    pointer-events: none;
+}
+
+#floor {
+    height: 20px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+#wall {
+    height: 100%;
+    width: 20px;
+    position: absolute;
+    left: 0;
+}
+
+#bullet-h-1 {
+    right: 0;
+    top: 250px;
+}
+
+#bullet-h-2 {
+    right: 0;
+    top: 350px;
+}
+
+#bullet-h-3 {
+    right: 0;
+    top: 450px;
+}
+
+#bullet-v-1 {
+    top: -100px;
+    left: 41%;
+}
+
+#bullet-v-2 {
+    top: -100px;
+    left: 49%;
+}
+
+#bullet-v-3 {
+    top: -100px;
+    left: 51%;
+}
+
+.bullet-h {
+    width: 80px;
+    height: 40px;
+}
+
+.bullet-v {
+    width: 40px;
+    height: 80px;
+}
+
+.position-absolute {
+    position: absolute;
+}
+
+#score-bar {
+    position: absolute;
+    top: 20px;
+    right: 90px;
+    display: flex;
+    gap: 8px;
+    z-index: 5;
+}
+
+#score-bar .bar {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(180deg, #96ff66, #42ff5b);
+    border-radius: 4px;
+    box-shadow: 0 0 8px rgba(255, 209, 102, 0.8);
+}
+
+#time-hud {
+    position: absolute;
+    top: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 6;
+    padding: 8px 14px;
+    color: #fff;
+    background: rgba(20, 20, 20, 0.7);
+    border-radius: 8px;
+    font-size: 13px;
+    line-height: 1.4;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+#time-hud span {
+    display: inline-block;
+    min-width: 38px;
+    color: #ffd166;
+    font-variant-numeric: tabular-nums;
+}
+
+#pause-button {
+    position: absolute;
+    top: 16px;
+    left: 20px;
+    z-index: 6;
+    padding: 8px 14px;
+    border: none;
+    border-radius: 999px;
+    background: rgba(20, 20, 20, 0.7);
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(24, 18, 10, 0.88);
+    color: white;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    z-index: 10;
+}
+
+.overlay h1 {
+    margin: 0 0 12px;
+    font-size: 92px;
+}
+
+.overlay h4 {
+    margin: 0;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+#game-over #description {
+    font-size: 92px;
+}
+
+#game-over-times {
+    display: flex;
+    gap: 32px;
+    margin: 4px 0 24px;
+    font-size: 24px;
+    text-align: center;
+}
+
+#game-over-times span {
+    color: #ffd166;
+    font-variant-numeric: tabular-nums;
+}
+
+#game-over #restart {
+    font-size: 40px;
+    cursor: pointer;
+}
+
+@media (max-width: 620px) {
+    .container {
+        transform: scale(0.75);
+        transform-origin: top center;
+        margin-bottom: -100px;
+    }
+
+    #controls {
+        grid-template-columns: repeat(2, auto);
+    }
+}
